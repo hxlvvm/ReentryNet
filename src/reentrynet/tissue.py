@@ -20,7 +20,24 @@ def _strokes(rng, shape, n, width):
     return m
 
 
-GENERATOR = {"scar": (0.04, 0.25), "bz": (0.1, 0.5), "channels": (0, 3), "fibrosis_p": 0.5, "fib_density": (0.05, 0.3)}
+GENERATOR = {"scar": (0.04, 0.25), "bz": (0.1, 0.5), "channels": (0, 3), "fibrosis_p": 0.9, "fib_density": (0.1, 0.45)}
+
+
+def _rings(rng, shape):
+    """Annular scars with 0-2 gaps: a held-out shape family, never used for training."""
+    yy, xx = np.mgrid[: shape[0], : shape[1]]
+    m = np.zeros(shape, bool)
+    for _ in range(rng.integers(1, 3)):
+        cy, cx = rng.uniform(30, shape[0] - 30), rng.uniform(35, shape[1] - 25)
+        r, w = rng.uniform(10, 25), rng.uniform(3, 7)
+        d = np.hypot(yy - cy, xx - cx)
+        ring = np.abs(d - r) <= w / 2
+        ang = np.arctan2(yy - cy, xx - cx)
+        for _ in range(rng.integers(0, 3)):
+            a0, half = rng.uniform(-np.pi, np.pi), rng.uniform(0.15, 0.35)
+            ring &= np.abs(np.angle(np.exp(1j * (ang - a0)))) > half
+        m |= ring
+    return m
 
 
 def make_tissue(rng: np.random.Generator, shape=(128, 128), family: str = "blobs", **override) -> np.ndarray:
@@ -30,8 +47,12 @@ def make_tissue(rng: np.random.Generator, shape=(128, 128), family: str = "blobs
     if family == "blobs":
         field = _smooth_field(rng, shape, rng.uniform(5, 12))
         scar = field > np.quantile(field, 1 - rng.uniform(*g["scar"]))
-    else:
+    elif family == "strokes":
         scar = _strokes(rng, shape, rng.integers(1, 4), rng.uniform(4, 10))
+    elif family == "rings":
+        scar = _rings(rng, shape)
+    else:
+        raise ValueError(f"unknown family {family}")
     bz_cond = rng.uniform(*g["bz"])
     border = ndimage.binary_dilation(scar, iterations=int(rng.integers(1, 5))) & ~scar
     c[border] = bz_cond
