@@ -14,3 +14,17 @@
 - Timing: about 4.5 ms per step on an A100 for 924 runs at 128x128; the full 20k-tissue run is about 1.5 GPU-hours.
 - Next: freeze GATE.md (trivial baseline = logistic regression on scar, border-zone and fibrosis
   fractions), run the full set, train the U-Net, then the ablation suggestion verified by re-simulation.
+
+## Model development log (validation block 1007 only; test and rings untouched)
+
+- **Run 1** (2026-10-07):
+  - **Setup.** U-Net with inputs c and scar mask, lr 1e-3, 40 epochs, last epoch saved.
+  - **Inducibility.** Validation AUROC 0.790 against logistic 0.781 and GBM 0.780. That misses the +0.05 target.
+  - **Training curve.** It peaked at 0.837 (epoch 10) and then decayed.
+  - **Maps.** Dice 0.505 against a border-zone mask at 0.063; activation MAE 0.48 against 1.81.
+- **Run 2** (planned, one round only):
+  - coordinate channels, because the protocol is not translation invariant (S1 from the left edge, S2 at mid-height);
+  - best-epoch selection on validation;
+  - lr 5e-4 with weight decay 1e-3;
+  - three seeds averaged.
+  Whatever run 2 gives is what goes to the test set.
