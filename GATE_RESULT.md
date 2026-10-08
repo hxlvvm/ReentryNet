@@ -96,8 +96,12 @@ tissue) was simulated:
 | surrogate's pick within this coarser set works | 11/40 |
 | one of the surrogate's top 5 works | 18/40 |
 
-**Reading.** The surrogate finds working lesions 15-25 times more often than chance. It still falls well
-short of what exhaustive simulation can find.
+**Reading** (corrected; an earlier version said "15-25 times").
+- On the full grid the surrogate's pick works 16 times as often as a random line (47.8 % vs 3.0 %).
+- On the coarse oracle grid it works 14 times as often as the average line (27.5 % vs 1.9 %).
+- It falls well short of what exhaustive simulation can find.
+- The side-effect figure of 0.5 % above covered only the early-activated part of the tissue; the
+  verification round below measures it over the whole tissue.
 
 ## Verification round (plan in `VERIFY_PLAN.md`, written before running; raw numbers in `results/verify.json`)
 
