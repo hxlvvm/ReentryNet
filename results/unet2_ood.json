@@ -1,0 +1,29 @@
+{
+ "split": "ood",
+ "checkpoints": [
+  "unet2_s0.pt",
+  "unet2_s1.pt",
+  "unet2_s2.pt"
+ ],
+ "n": 1024,
+ "inducible_fraction": 0.4482421875,
+ "auroc": {
+  "cnn": 0.8286347774114563,
+  "logistic": 0.7951761235467639,
+  "gbm": 0.8054524071182062
+ },
+ "cnn_at_validation_threshold": {
+  "sensitivity": 0.5925925925925926,
+  "specificity": 0.856637168141593
+ },
+ "dice": {
+  "cnn": 0.4920158698035866,
+  "border_zone_mask": 0.0384036511530274
+ },
+ "activation_mae": {
+  "cnn": 0.6811299324035645,
+  "distance_over_speed": 1.5816556215286255,
+  "median_speed": 1.3119429349899292
+ },
+ "cnn_ms_per_tissue_cpu_1thread": 52.93154716491699
+}
