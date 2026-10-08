@@ -16,11 +16,11 @@ INTERVALS = [41.0, 43.0, 45.0, 48.0, 52.0, 60.0]
 N_TISSUES, LENGTH, WIDTH = 400, 20, 3
 
 
-def candidates(shape=(128, 128)):
+def candidates(shape=(128, 128), step=6):
     yy, xx = np.mgrid[: shape[0], : shape[1]]
     masks, meta = [], []
-    for cy in range(6, shape[0] - 5, 6):
-        for cx in range(14, shape[1] - 5, 6):
+    for cy in range(6, shape[0] - 5, step):
+        for cx in range(14, shape[1] - 5, step):
             for ang in (0, 45, 90, 135):
                 t = np.deg2rad(ang)
                 m = np.zeros(shape, bool)
