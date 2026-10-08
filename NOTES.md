@@ -28,3 +28,7 @@
   - lr 5e-4 with weight decay 1e-3;
   - three seeds averaged.
   Whatever run 2 gives is what goes to the test set.
+- **Run 2 result** (validation): ensemble AUROC 0.871 against logistic 0.781 and GBM 0.780, i.e. +0.09.
+  - **Maps.** Dice 0.527 against 0.063; activation MAE 0.73 against 1.81.
+  - **Selection.** Best epochs were 11-12.
+  - **Freeze.** The model is frozen here and run on the test and rings sets once.
