@@ -98,3 +98,65 @@ tissue) was simulated:
 
 **Reading.** The surrogate finds working lesions 15-25 times more often than chance. It still falls well
 short of what exhaustive simulation can find.
+
+## Verification round (plan in `VERIFY_PLAN.md`, written before running; raw numbers in `results/verify.json`)
+
+An adversarial review questioned several claims. These experiments do not change the frozen model.
+
+**Labels**
+
+| check | result | reading |
+|---|---|---|
+| E3a: all c < 1 set to 1 for the 400 inducible test tissues | 0/400 inducible | positives depend on the scar |
+| E3b: 64 positives run to 1,200 units after S2 | 63/64 still active in the last 150 units | persistent activity, not a slow transient |
+| E6: half time step (512 validation tissues) | 11 flips (2.1 %) | time integration converged |
+| **E6: half grid spacing** (256 tissues on a 256 x 256 grid) | **70 flips (27 %)**; inducible 42 % -> 18 % | **not spatially converged** |
+
+The labels describe this discretised model at dx = 1. They are not converged continuum physics. Everything
+here, including the surrogate, is a surrogate of the dx = 1 simulator.
+
+**A position-aware baseline (E4)**
+
+Gradient boosting on global features plus pooled 8 x 8 / 16 x 16 conductivity and scar maps:
+
+| set | AUROC |
+|---|---|
+| test | 0.817 / 0.818 |
+| rings | 0.823 / 0.828 |
+
+- Against this stronger baseline, the U-Net leads by +0.035 on test and ties on the rings (0.829 vs 0.828).
+- The pre-registered target (+0.05 over the global-feature baseline) was met. Against the position-aware
+  baseline, added afterwards, it would not be.
+
+**What drives ablation success (E1, E1b, E2, E5)**
+
+| strategy, 400 inducible test tissues | made non-inducible |
+|---|---|
+| surrogate's pick | 191 (47.8 %) |
+| surrogate's pick, excluding lesions within 20 px of the S2 site | 114 (28.5 %) |
+| line closest to the S2 site | 89 (22.3 %) |
+| line touching the most scar components ("isthmus") | 51 (12.8 %) |
+| line covering the most border zone | 11 (2.8 %) |
+| random line | 11-12 (about 3 %) |
+| surrogate's top 5, simulated; success if any works | 254 (63.5 %) |
+| 5 random lines, simulated; success if any works | 37 (9.3 %) |
+
+**Shielding the stimulus.** 229 of the surrogate's 400 picks lie within 20 px of the S2 site, and they work
+53 % of the time. The picks further away work 41 % of the time (70/171).
+
+**Reading.**
+- A large part of what the surrogate learned is to shield the single S2 pacing site. That is a shortcut
+  specific to this protocol. Clinical inducibility protocols pace from several sites for exactly this reason.
+- It still beats every heuristic, including the shielding heuristic, and succeeds well above chance far
+  from the stimulus.
+- The decision rule set in advance (>= 30 % with near-S2 lesions excluded) is narrowly missed at 28.5 %. The
+  claim is therefore reworded to include the shielding effect.
+
+**Best achievable (E5).** On tissues 0-39 the fine-grid surrogate pick works for 11, while simulating every
+line on a coarser grid finds a working one for 31. The surrogate is far from optimal.
+
+**Side effects (E2).** S1-only simulation over the whole tissue:
+- the median change in the activated share is -0.03 %;
+- the 5th percentile is -0.5 %;
+- in the worst tissue, 28 % of the tissue is no longer reached;
+- across tissues, the 95th percentile of the change in 95th-percentile activation time is 10 time units.
