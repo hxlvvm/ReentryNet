@@ -1,0 +1,14 @@
+{
+ "test": {
+  "dice_all_living_tissue": 0.6105242239058216,
+  "reentry_map_coverage_median": 0.5097876035817961,
+  "activation_mae_pixel_mean_baseline": 1.6787291765213013,
+  "activation_valid_fraction_median": 0.302978515625
+ },
+ "rings": {
+  "dice_all_living_tissue": 0.5904434797249977,
+  "reentry_map_coverage_median": 0.44861778846153844,
+  "activation_mae_pixel_mean_baseline": 1.6222798824310303,
+  "activation_valid_fraction_median": 0.322509765625
+ }
+}

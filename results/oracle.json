@@ -1,0 +1,322 @@
+[
+ {
+  "tissue": 0,
+  "candidates": 387,
+  "any_works": true,
+  "fraction_working": 0.06201550387596899,
+  "surrogate_choice_works": false,
+  "surrogate_top5_any_works": false
+ },
+ {
+  "tissue": 1,
+  "candidates": 383,
+  "any_works": true,
+  "fraction_working": 0.0391644908616188,
+  "surrogate_choice_works": false,
+  "surrogate_top5_any_works": false
+ },
+ {
+  "tissue": 2,
+  "candidates": 400,
+  "any_works": true,
+  "fraction_working": 0.0075,
+  "surrogate_choice_works": false,
+  "surrogate_top5_any_works": false
+ },
+ {
+  "tissue": 3,
+  "candidates": 389,
+  "any_works": true,
+  "fraction_working": 0.05141388174807198,
+  "surrogate_choice_works": true,
+  "surrogate_top5_any_works": true
+ },
+ {
+  "tissue": 4,
+  "candidates": 395,
+  "any_works": true,
+  "fraction_working": 0.015189873417721518,
+  "surrogate_choice_works": true,
+  "surrogate_top5_any_works": true
+ },
+ {
+  "tissue": 5,
+  "candidates": 400,
+  "any_works": true,
+  "fraction_working": 0.045,
+  "surrogate_choice_works": false,
+  "surrogate_top5_any_works": false
+ },
+ {
+  "tissue": 6,
+  "candidates": 399,
+  "any_works": false,
+  "fraction_working": 0.0,
+  "surrogate_choice_works": false,
+  "surrogate_top5_any_works": false
+ },
+ {
+  "tissue": 7,
+  "candidates": 398,
+  "any_works": true,
+  "fraction_working": 0.05527638190954774,
+  "surrogate_choice_works": false,
+  "surrogate_top5_any_works": false
+ },
+ {
+  "tissue": 8,
+  "candidates": 400,
+  "any_works": true,
+  "fraction_working": 0.05,
+  "surrogate_choice_works": true,
+  "surrogate_top5_any_works": true
+ },
+ {
+  "tissue": 9,
+  "candidates": 386,
+  "any_works": true,
+  "fraction_working": 0.03367875647668394,
+  "surrogate_choice_works": true,
+  "surrogate_top5_any_works": true
+ },
+ {
+  "tissue": 10,
+  "candidates": 400,
+  "any_works": false,
+  "fraction_working": 0.0,
+  "surrogate_choice_works": false,
+  "surrogate_top5_any_works": false
+ },
+ {
+  "tissue": 11,
+  "candidates": 398,
+  "any_works": true,
+  "fraction_working": 0.002512562814070352,
+  "surrogate_choice_works": true,
+  "surrogate_top5_any_works": true
+ },
+ {
+  "tissue": 12,
+  "candidates": 398,
+  "any_works": true,
+  "fraction_working": 0.010050251256281407,
+  "surrogate_choice_works": false,
+  "surrogate_top5_any_works": true
+ },
+ {
+  "tissue": 13,
+  "candidates": 400,
+  "any_works": true,
+  "fraction_working": 0.02,
+  "surrogate_choice_works": true,
+  "surrogate_top5_any_works": true
+ },
+ {
+  "tissue": 14,
+  "candidates": 400,
+  "any_works": true,
+  "fraction_working": 0.0175,
+  "surrogate_choice_works": false,
+  "surrogate_top5_any_works": true
+ },
+ {
+  "tissue": 15,
+  "candidates": 400,
+  "any_works": true,
+  "fraction_working": 0.0075,
+  "surrogate_choice_works": true,
+  "surrogate_top5_any_works": true
+ },
+ {
+  "tissue": 16,
+  "candidates": 397,
+  "any_works": true,
+  "fraction_working": 0.03526448362720403,
+  "surrogate_choice_works": false,
+  "surrogate_top5_any_works": true
+ },
+ {
+  "tissue": 17,
+  "candidates": 399,
+  "any_works": true,
+  "fraction_working": 0.007518796992481203,
+  "surrogate_choice_works": false,
+  "surrogate_top5_any_works": true
+ },
+ {
+  "tissue": 18,
+  "candidates": 393,
+  "any_works": false,
+  "fraction_working": 0.0,
+  "surrogate_choice_works": false,
+  "surrogate_top5_any_works": false
+ },
+ {
+  "tissue": 19,
+  "candidates": 399,
+  "any_works": true,
+  "fraction_working": 0.010025062656641603,
+  "surrogate_choice_works": false,
+  "surrogate_top5_any_works": false
+ },
+ {
+  "tissue": 20,
+  "candidates": 356,
+  "any_works": true,
+  "fraction_working": 0.014044943820224719,
+  "surrogate_choice_works": false,
+  "surrogate_top5_any_works": true
+ },
+ {
+  "tissue": 21,
+  "candidates": 400,
+  "any_works": true,
+  "fraction_working": 0.005,
+  "surrogate_choice_works": false,
+  "surrogate_top5_any_works": false
+ },
+ {
+  "tissue": 22,
+  "candidates": 396,
+  "any_works": true,
+  "fraction_working": 0.0025252525252525255,
+  "surrogate_choice_works": true,
+  "surrogate_top5_any_works": true
+ },
+ {
+  "tissue": 23,
+  "candidates": 397,
+  "any_works": true,
+  "fraction_working": 0.02518891687657431,
+  "surrogate_choice_works": true,
+  "surrogate_top5_any_works": true
+ },
+ {
+  "tissue": 24,
+  "candidates": 400,
+  "any_works": true,
+  "fraction_working": 0.01,
+  "surrogate_choice_works": false,
+  "surrogate_top5_any_works": false
+ },
+ {
+  "tissue": 25,
+  "candidates": 399,
+  "any_works": true,
+  "fraction_working": 0.022556390977443608,
+  "surrogate_choice_works": false,
+  "surrogate_top5_any_works": false
+ },
+ {
+  "tissue": 26,
+  "candidates": 395,
+  "any_works": true,
+  "fraction_working": 0.04810126582278481,
+  "surrogate_choice_works": false,
+  "surrogate_top5_any_works": false
+ },
+ {
+  "tissue": 27,
+  "candidates": 382,
+  "any_works": false,
+  "fraction_working": 0.0,
+  "surrogate_choice_works": false,
+  "surrogate_top5_any_works": false
+ },
+ {
+  "tissue": 28,
+  "candidates": 388,
+  "any_works": true,
+  "fraction_working": 0.007731958762886598,
+  "surrogate_choice_works": false,
+  "surrogate_top5_any_works": false
+ },
+ {
+  "tissue": 29,
+  "candidates": 399,
+  "any_works": true,
+  "fraction_working": 0.03007518796992481,
+  "surrogate_choice_works": false,
+  "surrogate_top5_any_works": true
+ },
+ {
+  "tissue": 30,
+  "candidates": 400,
+  "any_works": false,
+  "fraction_working": 0.0,
+  "surrogate_choice_works": false,
+  "surrogate_top5_any_works": false
+ },
+ {
+  "tissue": 31,
+  "candidates": 391,
+  "any_works": true,
+  "fraction_working": 0.043478260869565216,
+  "surrogate_choice_works": false,
+  "surrogate_top5_any_works": false
+ },
+ {
+  "tissue": 32,
+  "candidates": 395,
+  "any_works": false,
+  "fraction_working": 0.0,
+  "surrogate_choice_works": false,
+  "surrogate_top5_any_works": false
+ },
+ {
+  "tissue": 33,
+  "candidates": 400,
+  "any_works": false,
+  "fraction_working": 0.0,
+  "surrogate_choice_works": false,
+  "surrogate_top5_any_works": false
+ },
+ {
+  "tissue": 34,
+  "candidates": 396,
+  "any_works": true,
+  "fraction_working": 0.020202020202020204,
+  "surrogate_choice_works": false,
+  "surrogate_top5_any_works": true
+ },
+ {
+  "tissue": 35,
+  "candidates": 398,
+  "any_works": false,
+  "fraction_working": 0.0,
+  "surrogate_choice_works": false,
+  "surrogate_top5_any_works": false
+ },
+ {
+  "tissue": 36,
+  "candidates": 400,
+  "any_works": true,
+  "fraction_working": 0.025,
+  "surrogate_choice_works": true,
+  "surrogate_top5_any_works": true
+ },
+ {
+  "tissue": 37,
+  "candidates": 397,
+  "any_works": true,
+  "fraction_working": 0.012594458438287154,
+  "surrogate_choice_works": true,
+  "surrogate_top5_any_works": true
+ },
+ {
+  "tissue": 38,
+  "candidates": 394,
+  "any_works": false,
+  "fraction_working": 0.0,
+  "surrogate_choice_works": false,
+  "surrogate_top5_any_works": false
+ },
+ {
+  "tissue": 39,
+  "candidates": 384,
+  "any_works": true,
+  "fraction_working": 0.028645833333333332,
+  "surrogate_choice_works": false,
+  "surrogate_top5_any_works": false
+ }
+]

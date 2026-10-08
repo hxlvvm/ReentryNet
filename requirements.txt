@@ -1,0 +1,6 @@
+torch>=2.4
+numpy
+scipy
+scikit-learn
+matplotlib
+cardiograd @ git+https://github.com/hxlvvm/CardioGrad

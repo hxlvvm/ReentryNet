@@ -1,4 +1,4 @@
-"""README figures: spiral animation, example predictions, ROC curves. usage: figures.py DATA CKPT [CKPT ...]"""
+"""README figures: spiral animation and ROC curves. usage: figures.py DATA CKPT [CKPT ...]"""
 import sys
 from pathlib import Path
 
@@ -67,24 +67,8 @@ ax.legend(fontsize=6.5, frameon=False, loc="lower right")
 fig.tight_layout()
 fig.savefig(ROOT / "assets/roc.png", dpi=160)
 
-# example predictions on inducible test tissues
 rng = np.random.default_rng(3)
 idx = rng.choice(np.where(test["inducible"])[0], 4, replace=False)
-p, rmap, act = predict(test["c"][idx])
-fig, axes = plt.subplots(4, 5, figsize=(10, 8.4))
-for r, i in enumerate(idx):
-    c = test["c"][i]
-    true_act = test["s1_act"][i].astype(np.float32)
-    panels = [(c, "conductivity", "gray", 0, 1), (test["reentry_map"][i].astype(np.float32), "re-entry (simulated)", "magma", 0, 1),
-              (rmap[r], f"re-entry (U-Net), p={p[r]:.2f}", "magma", 0, 1), (true_act, "S1 activation (simulated)", "viridis", 0, np.nanmax(true_act)),
-              (np.where(c > 0, act[r], np.nan), "S1 activation (U-Net)", "viridis", 0, np.nanmax(true_act))]
-    for a, (img, title, cmap, lo, hi) in zip(axes[r], panels):
-        a.imshow(img, cmap=cmap, vmin=lo, vmax=hi, origin="lower")
-        a.set_xticks([]), a.set_yticks([])
-        if r == 0:
-            a.set_title(title, fontsize=8)
-fig.tight_layout()
-fig.savefig(ROOT / "assets/examples.png", dpi=130)
 
 # spiral animation for one inducible test tissue at its first inducing interval
 INTERVALS = [41.0, 43.0, 45.0, 48.0, 52.0, 60.0]

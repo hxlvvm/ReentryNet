@@ -1,0 +1,55 @@
+{
+ "n": 400,
+ "candidates": 1520,
+ "lesion": {
+  "length": 20,
+  "width": 3
+ },
+ "sanity_unablated_still_inducible": 1.0,
+ "surrogate_search_seconds_per_tissue": 0.5369567066431046,
+ "strategies": {
+  "surrogate": {
+   "made_non_inducible": 191,
+   "rate": 0.4775,
+   "ci": [
+    0.4289965818287492,
+    0.5264314869982364
+   ],
+   "median_extra_unreached_fraction": 0.005239223475234478
+  },
+  "border_zone": {
+   "made_non_inducible": 11,
+   "rate": 0.0275,
+   "ci": [
+    0.015423476078524151,
+    0.04856596928817408
+   ],
+   "median_extra_unreached_fraction": -0.0013750700765701174
+  },
+  "random": {
+   "made_non_inducible": 12,
+   "rate": 0.03,
+   "ci": [
+    0.017242849034032177,
+    0.05169903312966765
+   ],
+   "median_extra_unreached_fraction": -0.0012102562031260922
+  }
+ },
+ "mcnemar_surrogate_vs_border_zone": {
+  "only_first_succeeds": 184,
+  "only_second_succeeds": 4,
+  "p": 2.626053623931675e-49,
+  "difference_points": 44.99999999999999
+ },
+ "mcnemar_surrogate_vs_random": {
+  "only_first_succeeds": 185,
+  "only_second_succeeds": 6,
+  "p": 4.1009866034319145e-47,
+  "difference_points": 44.75
+ },
+ "surrogate_predicted_vs_actual": {
+  "mean_predicted_inducibility": 0.36778126209857875,
+  "actual_still_inducible": 0.5225
+ }
+}
